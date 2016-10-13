@@ -20,9 +20,24 @@ public class SimpleTrack {
        System.out.println(e);
     }
   }
+	
+	public static void print(int pos, int pos2) {
+		for(int i=0; i < 100; i++) {
+        if(i == pos) {
+          System.out.print(RED + "V");          
+        }
+				if(i == pos2) {
+					System.out.print(CYAN + "Y");
+				}
+        else {
+          System.out.print(" ");
+        }
+      }
+	}
 		
 	public static void main(String[] args) {
     int pos = 30; 
+		int pos2 = 50;
 
     System.out.println(BLUE + "\n\nPress ctrl-c to quit...." + RESET);
     sleep(2000);
@@ -35,7 +50,13 @@ public class SimpleTrack {
       } else {
         pos--;
       }
-      // print the screen
+			if(Math.random() > 0.5) {
+        pos2++;
+      } else {
+        pos2--;
+      }
+			print(pos, pos2);
+      /*/ print the screen
       for(int i=0; i < 100; i++) {
         if(i == pos) {
           System.out.print(RED + "V");          
@@ -43,7 +64,7 @@ public class SimpleTrack {
         else {
           System.out.print(" ");
         }
-      }
+      }*/
       System.out.print(RESET + "\n");
       sleep(30);
     }
